@@ -4,4 +4,4 @@ services:
 
 
 volumes:
-   postgrescatalog:    
+   postgres_catalog:    
