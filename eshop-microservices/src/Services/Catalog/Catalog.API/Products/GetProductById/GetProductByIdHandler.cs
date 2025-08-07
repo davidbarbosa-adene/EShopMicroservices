@@ -3,14 +3,14 @@
 namespace Catalog.API.Products.GetProductById
 {
 
-    public record GetProductBydIdQuery(Guid Id) : IQuery<GetProductByIdResult>;
+    public record GetProductByIdQuery(Guid Id) : IQuery<GetProductByIdResult>;
     public record GetProductByIdResult(Product Product);
 
     internal class GetProductByIdHandler
         (IDocumentSession session, ILogger logger)
-        : IQueryHandler<GetProductBydIdQuery, GetProductByIdResult>
+        : IQueryHandler<GetProductByIdQuery, GetProductByIdResult>
     {
-        public async Task<GetProductByIdResult> Handle(GetProductBydIdQuery query, CancellationToken cancellationToken)
+        public async Task<GetProductByIdResult> Handle(GetProductByIdQuery query, CancellationToken cancellationToken)
         {
             logger.LogInformation("GetProductByIdHandler. Handle called with {@query}", query);
 
