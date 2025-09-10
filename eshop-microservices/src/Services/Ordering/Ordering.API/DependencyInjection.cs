@@ -1,10 +1,13 @@
-﻿ namespace Ordering.API
+﻿using Carter;
+
+namespace Ordering.API
 {
     public static class DependencyInjection
     {
         public static IServiceCollection AddApiServices(this IServiceCollection services)
         {
-            // Add API-specific services here, e.g., controllers, Swagger, CORS, etc.
+            services.AddCarter();
+
             return services;
         }
 
@@ -12,7 +15,7 @@
         {
             // Configure the HTTP request pipeline here, e.g., app.UseSwagger(), app.UseCors(), etc.
 
-            // app.MapCarter();
+            app.MapCarter();
 
             return app;
         }
